@@ -1,0 +1,17 @@
+
+
+.container {
+    display : flex;
+    justify-content: space-between;
+}
+
+h1 {
+    font-size: medium;
+}
+
+.nav-links {
+ display:  flex;
+ justify-items: space-between;
+ align-items: center;
+ font-size: large;
+}

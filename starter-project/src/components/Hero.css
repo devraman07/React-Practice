@@ -1,0 +1,49 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px;
+}
+
+.nav {
+   
+   background-color: blue;
+   margin-bottom: 20px;
+}
+
+.nav-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+.nav-buttons {
+    display: flex;
+    gap: 10px;
+    
+}
+
+.main-content {
+    display: flex;
+    height: 300px;
+    align-items: stretch;
+    gap: 10px;
+}
+
+.leftSide {
+    width: 50%;
+    
+    background-color: aqua;
+    text-align: center;
+}
+
+.rightSide {
+    width: 50%;
+    
+    background-color: blueviolet;
+    text-align: center;
+
+}

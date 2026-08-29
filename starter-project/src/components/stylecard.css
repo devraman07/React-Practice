@@ -1,0 +1,18 @@
+
+
+.container {
+    background-color: blue;
+    height : 80px;
+    width : 40px;
+    padding : 20px;
+    border-radius: 10px;
+}
+
+.card-items {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: large;
+    color: wheat;
+    overflow: hidden;
+}
