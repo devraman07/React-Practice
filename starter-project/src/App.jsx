@@ -17,6 +17,7 @@ import UseEffect from "./components/UseEffect.jsx";
 import FetchData from "./components/fetchData.jsx";
 import UserContextProvider from "./components/UsercontextProvider.jsx";
 import Calculator from "./components/calculator.jsx";
+import UseRef from "./components/useRef.jsx";
 
 
 const App = () => {
@@ -38,6 +39,7 @@ const App = () => {
       <FetchData />
       <UserContextProvider />
       <Calculator />
+      <UseRef />
     </div>
   );
 };
