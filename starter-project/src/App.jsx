@@ -16,6 +16,7 @@ import DeleteAccount from "./components/DeleteAccount.jsx";
 import UseEffect from "./components/UseEffect.jsx";
 import FetchData from "./components/fetchData.jsx";
 import UserContextProvider from "./components/UsercontextProvider.jsx";
+import Calculator from "./components/calculator.jsx";
 
 
 const App = () => {
@@ -36,6 +37,7 @@ const App = () => {
       <UseEffect />
       <FetchData />
       <UserContextProvider />
+      <Calculator />
     </div>
   );
 };
