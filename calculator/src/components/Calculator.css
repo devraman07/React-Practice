@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Space+Grotesk:wght@500;600&display=swap');
+
+:root {
+  --panel-top: #2c2c2b;
+  --panel-bottom: #201f1e;
+  --well-bg: #141310;
+  --led-amber: #ff9f1c;
+  --led-amber-dim: #7a4d0e;
+  --key-digit: #d8d4cb;
+  --key-digit-text: #26231f;
+  --key-op: #b5502e;
+  --key-op-text: #f7ede4;
+  --key-util: #46433d;
+  --key-util-text: #d8d4cb;
+  --key-eq: #7a8c4a;
+  --key-eq-text: #eef2df;
+  --seam: rgba(0, 0, 0, 0.55);
+}
+
+.Calculator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 32px;
+  background: #0d0d0c;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.calculator {
+  width: 320px;
+  padding: 20px 18px 24px;
+  border-radius: 18px;
+  background: linear-gradient(160deg, var(--panel-top), var(--panel-bottom));
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.06) inset,
+    0 -1px 0 rgba(0, 0, 0, 0.4) inset,
+    0 24px 48px rgba(0, 0, 0, 0.55);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+/* --- Display well --- */
+
+.screen {
+  grid-column: 1 / -1;
+  margin-bottom: 6px;
+  padding: 4px;
+  border-radius: 10px;
+  background: #0a0a09;
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.6) inset,
+    0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.Value {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 18px 16px;
+  border: none;
+  border-radius: 6px;
+  background: var(--well-bg);
+  color: var(--led-amber);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 2.1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-align: right;
+  text-shadow: 0 0 10px rgba(255, 159, 28, 0.55), 0 0 2px rgba(255, 159, 28, 0.8);
+  caret-color: transparent;
+}
+
+.Value:focus {
+  outline: 2px solid var(--led-amber-dim);
+  outline-offset: 2px;
+}
+
+/* --- Keys, shared tactile base --- */
+
+.key {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 58px;
+  border-radius: 10px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 90ms ease, box-shadow 90ms ease;
+}
+
+.key:focus-visible {
+  outline: 2px solid var(--led-amber);
+  outline-offset: 2px;
+}
+
+.key-digit {
+  background: linear-gradient(180deg, #e4e0d6, var(--key-digit));
+  color: var(--key-digit-text);
+  box-shadow:
+    0 3px 0 var(--seam),
+    0 5px 8px rgba(0, 0, 0, 0.35);
+}
+
+.key-op {
+  background: linear-gradient(180deg, #c66038, var(--key-op));
+  color: var(--key-op-text);
+  box-shadow:
+    0 3px 0 rgba(0, 0, 0, 0.5),
+    0 5px 8px rgba(0, 0, 0, 0.35);
+}
+
+.key-util {
+  background: linear-gradient(180deg, #524e46, var(--key-util));
+  color: var(--key-util-text);
+  box-shadow:
+    0 3px 0 var(--seam),
+    0 5px 8px rgba(0, 0, 0, 0.3);
+  font-size: 1rem;
+}
+
+.key-clear {
+  color: #e8b4a3;
+}
+
+.key-eq {
+  background: linear-gradient(180deg, #8fa257, var(--key-eq));
+  color: var(--key-eq-text);
+  box-shadow:
+    0 3px 0 rgba(0, 0, 0, 0.5),
+    0 5px 8px rgba(0, 0, 0, 0.35);
+}
+
+
+.key:active {
+  transform: translateY(3px);
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Layout spans: mirrors a real keypad, not a uniform grid --- */
+
+.key-tall {
+  grid-row: span 2;
+  height: auto;
+}
+
+.key-wide {
+  grid-column: span 2;
+}
+
+
+
+@media (max-width: 380px) {
+  .calculator {
+    width: 100%;
+  }
+
+  .Value {
+    font-size: 1.6rem;
+  }
+}
